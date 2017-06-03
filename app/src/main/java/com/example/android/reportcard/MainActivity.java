@@ -14,15 +14,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ReportCard studentOne = new ReportCard(5591);
+        ReportCard studentOne = new ReportCard(5568);
 
         List<String> lessonsList = new ArrayList<>();
 
-        lessonsList.add(0, "Lesson One");
-        lessonsList.add(1, "Lesson Two");
-        lessonsList.add(2, "Lesson Three");
-        lessonsList.add(3, "Lesson Four");
-        lessonsList.add(4, "Lesson Five");
+        lessonsList.add(0, "Drawing Lesson One");
+        lessonsList.add(1, "Drawing Lesson Two");
+        lessonsList.add(2, "Drawing Lesson Three");
+        lessonsList.add(3, "Drawing Lesson Four");
+        lessonsList.add(4, "Drawing Lesson Five");
 
         studentOne.setLessons(lessonsList);
 

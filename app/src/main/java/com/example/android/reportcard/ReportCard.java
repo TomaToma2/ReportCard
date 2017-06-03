@@ -102,7 +102,7 @@ public class ReportCard {
                 "School: " + getSchoolName() + "\n" +
                 "Lessons evaluated:\n" +
                 getStringOfAllLessonsWithGrades() +
-                "Average grade: " + getAverageGrade() + "\n" +
+                "Drawing Lessons Average Grade: " + getAverageGrade() + "\n" +
                 "Message from the teacher: " + getMessageToStudent();
         return filledReportCard;
     }
