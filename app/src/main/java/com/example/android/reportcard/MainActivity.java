@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         gradesList.add(4.5);
         gradesList.add(5.0);
         gradesList.add(4.5);
-        gradesList.add(4.5);
+        gradesList.add(4.0);
 
         studentOne.setGrades(gradesList);
 
