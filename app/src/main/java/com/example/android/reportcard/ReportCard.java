@@ -7,106 +7,101 @@ import java.util.List;
 public class ReportCard {
 
     // initialize students ID index
-    private int studentId;
+    private int mStudentId;
 
     // is final because it can't be modified
 
-    private final String schoolName = "Wrocław Univesity of Science and Technology";
-    private String MessageToStudent;
+    private final String mSchoolName = "Wrocław Univesity of Science and Technology";
+    private String mMessageToStudent;
 
     // List of names of subjects in report card
 
-    private List<String> lessons;
+    private List<String> mLessons;
 
     //List of grade
     // List of every subject's grade in report card.
     // Grades go from 2 to 5.5 (< 3 means failed)
-    // Grade system from Wrocław University of Science and Technology in Poland
+    // Grade system from Wroclaw University of Science and Technology in Poland
 
-    private List<Double> grades;
+    private List<Double> mGrades;
 
     // constructor requires the studentId because is mandatory
 
     public ReportCard(int studentId) {
-        this.studentId = studentId;
-        this.lessons = new ArrayList<>();
-        this.grades = new ArrayList<>();
+        this.mStudentId = studentId;
+        this.mLessons = new ArrayList<>();
+        this.mGrades = new ArrayList<>();
     }
 
     private String getSchoolName() {
-        return schoolName;
+        return mSchoolName;
     }
 
     private String getMessageToStudent() {
-        return MessageToStudent;
+        return mMessageToStudent;
     }
 
     public void setMessageToStudent(String messageToStudent) {
-        this.MessageToStudent = messageToStudent;
+        this.mMessageToStudent = messageToStudent;
     }
 
     private List<String> getLessons() {
-        return lessons;
+        return mLessons;
     }
 
     public void setLessons(List<String> lessons) {
-        this.lessons = lessons;
+        this.mLessons = lessons;
     }
 
     private List<Double> getGrades() {
-        return grades;
+        return mGrades;
     }
 
     public void setGrades(List<Double> grades) {
-        this.grades = grades;
+        this.mGrades = grades;
     }
 
-    public int getStudentId() {
-        return studentId;
-    }
-
-    private double getAverageGrade() {
+    public double getAverageGrade() {
         double sum = 0;
 
-        for (int i = 0; i < grades.size(); i++) {
-            sum += grades.get(i);
+        for (int i = 0; i < mGrades.size(); i++) {
+            sum += mGrades.get(i);
         }
-        double averageGrade = sum / grades.size();
-        return averageGrade;
+        double mAverageGrade = sum / mGrades.size();
+        return mAverageGrade;
     }
 
-    private String getStringOfOneLessonWithGrade(int index) {
-        List<String> lessons = getLessons();
-        List<Double> grades = getGrades();
+    public String getStringOfOneLessonWithGrade(int index) {
+        List<String> lessons = mLessons;
+        List<Double> grades = mGrades;
 
-        String lessonWithGrade = lessons.get(index) + " with grade " +
+        String mLessonsWithGrade = lessons.get(index) + " with grade " +
                 Double.toString(grades.get(index));
 
-        return lessonWithGrade;
+        return mLessonsWithGrade;
     }
 
-    private String getStringOfAllLessonsWithGrades() {
-        String allLessonsWithGrades = "";
+    public String getStringOfAllLessonsWithGrades() {
+        String mAllLessonsWithGrades = "";
 
-        for (int i = 0; i < lessons.size(); i++) {
-            allLessonsWithGrades +=
+        for (int i = 0; i < mLessons.size(); i++) {
+            mAllLessonsWithGrades +=
                     (getStringOfOneLessonWithGrade(i) + "\n");
         }
 
-        return allLessonsWithGrades;
+        return mAllLessonsWithGrades;
     }
 
     @Override
     public String toString() {
-        String filledReportCard = "Student ID: " + Integer.toString(studentId) + "\n" +
-                "School: " + getSchoolName() + "\n" +
-                "Lessons evaluated:\n" +
-                getStringOfAllLessonsWithGrades() +
+        return "ReportCard{" +
+                "Student index: " + mStudentId + "\n" +
+                "SchoolName: " + getSchoolName() + "\n" +
+                "Lessons Evaluated: " + "\n" + getStringOfAllLessonsWithGrades() + "\n" +
                 "Drawing Lessons Average Grade: " + getAverageGrade() + "\n" +
-                "Message from the teacher: " + getMessageToStudent();
-        return filledReportCard;
+                "Message To Student: " + getMessageToStudent() + "\n" +
+                '}';
     }
-
 
 }
 
