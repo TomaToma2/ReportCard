@@ -102,7 +102,6 @@ public class ReportCard {
                 "Message To Student: " + getMessageToStudent() + "\n" +
                 '}';
     }
-
 }
 
 
